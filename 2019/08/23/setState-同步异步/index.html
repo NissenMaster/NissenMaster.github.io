@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="面试,">
+  <meta name="keywords" content="react,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1. 堆和栈的理解2. let、const 和 var 的区别3. 作用域和执行上下文4. this 指向以及多重 bind 会改变之前的 this 吗5. promise 和 async、await 之间的联系6. 跨域的方法 后台开启允许跨域的原理以及 jsonp 的园路和缺点7. vue 双向数据绑定  路由模式8. 异步事件循环，微任务宏任务9. 如何打包优化包体积10. jq 源码，实现">
-<meta name="keywords" content="面试">
+<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;从刚开始接触 React 到现在，听到最多的就是：状态的变更来推动视图的更新。说白了，就是： UI = fun(state)。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;那 React 什么才能知道需要去重绘视图呢？这就像骑马一样拍他一下（setState）。 1. 写法在官方文档中， setState 有一下一段说明 1234void setS">
+<meta name="keywords" content="react">
 <meta property="og:type" content="article">
-<meta property="og:title" content="书友提供的爱回收面试题">
-<meta property="og:url" content="http://yoursite.com/2019/08/02/123/index.html">
+<meta property="og:title" content="React 的马鞭 setState">
+<meta property="og:url" content="http://yoursite.com/2019/08/23/setState-同步异步/index.html">
 <meta property="og:site_name" content="Nissen&#39;s Blog">
-<meta property="og:description" content="1. 堆和栈的理解2. let、const 和 var 的区别3. 作用域和执行上下文4. this 指向以及多重 bind 会改变之前的 this 吗5. promise 和 async、await 之间的联系6. 跨域的方法 后台开启允许跨域的原理以及 jsonp 的园路和缺点7. vue 双向数据绑定  路由模式8. 异步事件循环，微任务宏任务9. 如何打包优化包体积10. jq 源码，实现">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;从刚开始接触 React 到现在，听到最多的就是：状态的变更来推动视图的更新。说白了，就是： UI = fun(state)。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;那 React 什么才能知道需要去重绘视图呢？这就像骑马一样拍他一下（setState）。 1. 写法在官方文档中， setState 有一下一段说明 1234void setS">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-22T02:06:12.245Z">
+<meta property="og:updated_time" content="2019-08-23T03:45:41.256Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="书友提供的爱回收面试题">
-<meta name="twitter:description" content="1. 堆和栈的理解2. let、const 和 var 的区别3. 作用域和执行上下文4. this 指向以及多重 bind 会改变之前的 this 吗5. promise 和 async、await 之间的联系6. 跨域的方法 后台开启允许跨域的原理以及 jsonp 的园路和缺点7. vue 双向数据绑定  路由模式8. 异步事件循环，微任务宏任务9. 如何打包优化包体积10. jq 源码，实现">
+<meta name="twitter:title" content="React 的马鞭 setState">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;从刚开始接触 React 到现在，听到最多的就是：状态的变更来推动视图的更新。说白了，就是： UI = fun(state)。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;那 React 什么才能知道需要去重绘视图呢？这就像骑马一样拍他一下（setState）。 1. 写法在官方文档中， setState 有一下一段说明 1234void setS">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/02/123/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/23/setState-同步异步/">
 
 
 
 
 
-  <title>书友提供的爱回收面试题 | Nissen's Blog</title>
+  <title>React 的马鞭 setState | Nissen's Blog</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/02/123/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/23/setState-同步异步/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="NissenMaster">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">书友提供的爱回收面试题</h1>
+          <h1 class="post-title" itemprop="name headline">React 的马鞭 setState</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-02T10:58:53+08:00">
-                2019-08-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-23T09:34:43+08:00">
+                2019-08-23
               </time>
             
 
@@ -320,7 +320,34 @@
       
 
       
-        <h5 id="1-堆和栈的理解"><a href="#1-堆和栈的理解" class="headerlink" title="1. 堆和栈的理解"></a>1. 堆和栈的理解</h5><h5 id="2-let、const-和-var-的区别"><a href="#2-let、const-和-var-的区别" class="headerlink" title="2. let、const 和 var 的区别"></a>2. let、const 和 var 的区别</h5><h5 id="3-作用域和执行上下文"><a href="#3-作用域和执行上下文" class="headerlink" title="3. 作用域和执行上下文"></a>3. 作用域和执行上下文</h5><h5 id="4-this-指向以及多重-bind-会改变之前的-this-吗"><a href="#4-this-指向以及多重-bind-会改变之前的-this-吗" class="headerlink" title="4. this 指向以及多重 bind 会改变之前的 this 吗"></a>4. this 指向以及多重 bind 会改变之前的 this 吗</h5><h5 id="5-promise-和-async、await-之间的联系"><a href="#5-promise-和-async、await-之间的联系" class="headerlink" title="5. promise 和 async、await 之间的联系"></a>5. promise 和 async、await 之间的联系</h5><h5 id="6-跨域的方法-后台开启允许跨域的原理以及-jsonp-的园路和缺点"><a href="#6-跨域的方法-后台开启允许跨域的原理以及-jsonp-的园路和缺点" class="headerlink" title="6. 跨域的方法 后台开启允许跨域的原理以及 jsonp 的园路和缺点"></a>6. 跨域的方法 后台开启允许跨域的原理以及 jsonp 的园路和缺点</h5><h5 id="7-vue-双向数据绑定-路由模式"><a href="#7-vue-双向数据绑定-路由模式" class="headerlink" title="7. vue 双向数据绑定  路由模式"></a>7. vue 双向数据绑定  路由模式</h5><h5 id="8-异步事件循环，微任务宏任务"><a href="#8-异步事件循环，微任务宏任务" class="headerlink" title="8. 异步事件循环，微任务宏任务"></a>8. 异步事件循环，微任务宏任务</h5><h5 id="9-如何打包优化包体积"><a href="#9-如何打包优化包体积" class="headerlink" title="9. 如何打包优化包体积"></a>9. 如何打包优化包体积</h5><h5 id="10-jq-源码，实现-css-方法"><a href="#10-jq-源码，实现-css-方法" class="headerlink" title="10. jq 源码，实现 .css 方法"></a>10. jq 源码，实现 .css 方法</h5><h5 id="11-express-和-egg-的区别"><a href="#11-express-和-egg-的区别" class="headerlink" title="11. express 和 egg 的区别"></a>11. express 和 egg 的区别</h5>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;从刚开始接触 React 到现在，听到最多的就是：状态的变更来推动视图的更新。说白了，就是： UI = fun(state)。<br>&nbsp;&nbsp;&nbsp;&nbsp;那 React 什么才能知道需要去重绘视图呢？这就像骑马一样拍他一下（setState）。</p>
+<h4 id="1-写法"><a href="#1-写法" class="headerlink" title="1. 写法"></a>1. 写法</h4><p>在官方文档中， setState 有一下一段说明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void setState (</span><br><span class="line">      function|object nextState,</span><br><span class="line">      [function callback]</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>所以在实际应用中的用法也是很能满足正常需求的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// 1</span><br><span class="line">this.setState(&#123; count: 1 &#125;);</span><br><span class="line"></span><br><span class="line">//2</span><br><span class="line">this.setState(() =&gt; (&#123; count: 1 &#125;));</span><br><span class="line"></span><br><span class="line">// 3</span><br><span class="line">this.setState(&#123; count: 1 &#125;, () =&gt; &#123;</span><br><span class="line">  doSomething();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 4</span><br><span class="line">this.setState(() =&gt; &#123;</span><br><span class="line">  doASomething();</span><br><span class="line">  return &#123; count: 1 &#125;;</span><br><span class="line">&#125;, () =&gt; &#123;</span><br><span class="line">  doBSomething();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-拍打之后的事情"><a href="#2-拍打之后的事情" class="headerlink" title="2. 拍打之后的事情"></a>2. 拍打之后的事情</h4><p>调用了 setState 之后干了些什么</p>
+<ol>
+<li>代码中调用 setState 函数之后，React 会将传入的参数对象与组件当前的状态合并，然后触发所谓的调和过程（Reconciliation）。</li>
+<li>经过调和过程，React 会以相对高效的方式根据新的状态构建 React 元素树并且着手重新渲染整个 UI 界面；</li>
+<li>在 React 得到元素树之后，React 会自动计算出新的树与老树的节点差异，然后根据差异对界面进行最小化重渲染；</li>
+<li>在差异计算算法中，React 能够相对精确地知道哪些位置发生了改变以及应该如何改变，这就保证了按需更新，而不是全部重新渲染。</li>
+</ol>
+<p>这其中调用了4各生命周期函数</p>
+<ul>
+<li>shouldComponentUpdate</li>
+<li>componentWillUpdate</li>
+<li>render</li>
+<li>componentDidUpdate<h4 id="3-同步与异步"><a href="#3-同步与异步" class="headerlink" title="3. 同步与异步"></a>3. 同步与异步</h4>&nbsp;&nbsp;&nbsp;&nbsp;在最初刚接触React的时候,我曾一度认为 setState 是异步的，但是偶然间发现一个问题：当我在事件监听的时候调用多次 setState，却发现他们是同步的，后来做了一个测试。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; PureComponent &#125; from &apos;react&apos;;</span><br><span class="line"></span><br><span class="line">export default class Demo extends PureComponent &#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">    count: 0,</span><br><span class="line">    reactCount: 0,</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    document.getElementById(&apos;testButton&apos;).addEventListener(&apos;click&apos;, () =&gt; this.buttonClick())</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  buttonClick = () =&gt; &#123;</span><br><span class="line">    this.setState(&#123; count: 1 &#125;);</span><br><span class="line">    this.setState(&#123; count: 2 &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  reactClick = () =&gt; &#123;</span><br><span class="line">    this.setState(&#123; reactCount: 1 &#125;);</span><br><span class="line">    this.setState(&#123; reactCount: 2 &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    const &#123; count, reactCount &#125; = this.state;</span><br><span class="line">    console.log(`count`, count);</span><br><span class="line">    console.log(`reactCount`, reactCount);</span><br><span class="line">    return (</span><br><span class="line">      &lt;&gt;</span><br><span class="line">        &lt;h1&gt;&#123;`button : $&#123;this.state.count&#125;`&#125;&lt;/h1&gt;</span><br><span class="line">        &lt;h1&gt;&#123;`react : $&#123;this.state.reactCount&#125;`&#125;&lt;/h1&gt;</span><br><span class="line">        &lt;button id=&quot;testButton&quot;&gt;test&lt;/button&gt;</span><br><span class="line">        &lt;button onClick=&#123;() =&gt; this.reactClick()&#125;&gt;reactCount&lt;/button&gt;</span><br><span class="line">      &lt;/&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>演示效果：<br>![11201858.gif]:(./11201858.gif)</p>
+<blockquote>
+<p>在 React 的 setState 函数实现中，会根据一个变量 isBatchingUpdates 判断是直接更新 this.state 还是放到队列中回头再说，而 isBatchingUpdates 默认是 false，也就表示 setState 会同步更新 this.state，但是，有一个函数 batchedUpdates，这个函数会把 isBatchingUpdates 修改为 true，而当 React 在调用事件处理函数之前就会调用这个 batchedUpdates，造成的后果，就是由 React 控制的事件处理过程 setState 不会同步更新 this.state。</p>
+</blockquote>
+
       
     </div>
     
@@ -337,7 +364,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/面试/" rel="tag"># 面试</a>
+            <a href="/tags/react/" rel="tag"># react</a>
           
         </div>
       
@@ -350,15 +377,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/08/22/表驱动/" rel="next" title="表驱动法">
+                <i class="fa fa-chevron-left"></i> 表驱动法
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/22/表驱动/" rel="prev" title="表驱动法">
-                表驱动法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -511,7 +538,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-堆和栈的理解"><span class="nav-number">1.</span> <span class="nav-text">1. 堆和栈的理解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-let、const-和-var-的区别"><span class="nav-number">2.</span> <span class="nav-text">2. let、const 和 var 的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-作用域和执行上下文"><span class="nav-number">3.</span> <span class="nav-text">3. 作用域和执行上下文</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-this-指向以及多重-bind-会改变之前的-this-吗"><span class="nav-number">4.</span> <span class="nav-text">4. this 指向以及多重 bind 会改变之前的 this 吗</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-promise-和-async、await-之间的联系"><span class="nav-number">5.</span> <span class="nav-text">5. promise 和 async、await 之间的联系</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-跨域的方法-后台开启允许跨域的原理以及-jsonp-的园路和缺点"><span class="nav-number">6.</span> <span class="nav-text">6. 跨域的方法 后台开启允许跨域的原理以及 jsonp 的园路和缺点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-vue-双向数据绑定-路由模式"><span class="nav-number">7.</span> <span class="nav-text">7. vue 双向数据绑定  路由模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-异步事件循环，微任务宏任务"><span class="nav-number">8.</span> <span class="nav-text">8. 异步事件循环，微任务宏任务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-如何打包优化包体积"><span class="nav-number">9.</span> <span class="nav-text">9. 如何打包优化包体积</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#10-jq-源码，实现-css-方法"><span class="nav-number">10.</span> <span class="nav-text">10. jq 源码，实现 .css 方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#11-express-和-egg-的区别"><span class="nav-number">11.</span> <span class="nav-text">11. express 和 egg 的区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-写法"><span class="nav-number">1.</span> <span class="nav-text">1. 写法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-拍打之后的事情"><span class="nav-number">2.</span> <span class="nav-text">2. 拍打之后的事情</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-同步与异步"><span class="nav-number">3.</span> <span class="nav-text">3. 同步与异步</span></a></li></ol></div>
             
 
           </div>
