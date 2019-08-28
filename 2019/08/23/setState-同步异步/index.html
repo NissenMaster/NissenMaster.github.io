@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;从刚开始接触 React 到现在，听到最多的就是：状态的变更来推动视图的更新。说白了，就是： UI = fun(state)。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;那 React 什么才能知道需要去重绘视图呢？这就像骑马一样拍他一下（setState）。 1. 怎么拍在官方文档中， setState 有以下一段说明 1234void set">
+<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;从刚开始接触 React 到现在，听到最多的就是：状态的变更来推动视图的更新。说白了，就是： UI = fun(state)。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;那 React 什么才能知道需要去重绘视图呢？这就像骑马一样拍他一下（setState）。 1. 用法在官方文档中， setState 有以下一段说明 1234void setS">
 <meta name="keywords" content="react,setState">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React 的马鞭 setState">
+<meta property="og:title" content="React-setState">
 <meta property="og:url" content="http://yoursite.com/2019/08/23/setState-同步异步/index.html">
 <meta property="og:site_name" content="Nissen&#39;s Blog">
-<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;从刚开始接触 React 到现在，听到最多的就是：状态的变更来推动视图的更新。说白了，就是： UI = fun(state)。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;那 React 什么才能知道需要去重绘视图呢？这就像骑马一样拍他一下（setState）。 1. 怎么拍在官方文档中， setState 有以下一段说明 1234void set">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;从刚开始接触 React 到现在，听到最多的就是：状态的变更来推动视图的更新。说白了，就是： UI = fun(state)。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;那 React 什么才能知道需要去重绘视图呢？这就像骑马一样拍他一下（setState）。 1. 用法在官方文档中， setState 有以下一段说明 1234void setS">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/NissenMaster/NissenMaster.github.io/blob/master/images/11201858.gif">
-<meta property="og:updated_time" content="2019-08-23T07:30:28.675Z">
+<meta property="og:updated_time" content="2019-08-28T01:04:26.030Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React 的马鞭 setState">
-<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;从刚开始接触 React 到现在，听到最多的就是：状态的变更来推动视图的更新。说白了，就是： UI = fun(state)。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;那 React 什么才能知道需要去重绘视图呢？这就像骑马一样拍他一下（setState）。 1. 怎么拍在官方文档中， setState 有以下一段说明 1234void set">
+<meta name="twitter:title" content="React-setState">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;从刚开始接触 React 到现在，听到最多的就是：状态的变更来推动视图的更新。说白了，就是： UI = fun(state)。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;那 React 什么才能知道需要去重绘视图呢？这就像骑马一样拍他一下（setState）。 1. 用法在官方文档中， setState 有以下一段说明 1234void setS">
 <meta name="twitter:image" content="https://github.com/NissenMaster/NissenMaster.github.io/blob/master/images/11201858.gif">
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <title>React 的马鞭 setState | Nissen's Blog</title>
+  <title>React-setState | Nissen's Blog</title>
   
 
 
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">React 的马鞭 setState</h1>
+          <h1 class="post-title" itemprop="name headline">React-setState</h1>
         
 
         <div class="post-meta">
@@ -409,14 +409,13 @@
 
       
         <p>&nbsp;&nbsp;&nbsp;&nbsp;从刚开始接触 React 到现在，听到最多的就是：状态的变更来推动视图的更新。说白了，就是： UI = fun(state)。<br>&nbsp;&nbsp;&nbsp;&nbsp;那 React 什么才能知道需要去重绘视图呢？这就像骑马一样拍他一下（setState）。</p>
-<h4 id="1-怎么拍"><a href="#1-怎么拍" class="headerlink" title="1. 怎么拍"></a>1. 怎么拍</h4><p>在官方文档中， setState 有以下一段说明</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> setState (</span><br><span class="line">      <span class="function"><span class="keyword">function</span>|<span class="title">object</span> <span class="title">nextState</span>,</span></span><br><span class="line">      [function callback]</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h4 id="1-用法"><a href="#1-用法" class="headerlink" title="1. 用法"></a>1. 用法</h4><p>在官方文档中， setState 有以下一段说明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void setState (</span><br><span class="line">      function|object nextState,</span><br><span class="line">      [function callback]</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
 <p>所以在实际应用中的用法也是很能满足正常需求的：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="keyword">this</span>.setState(&#123; <span class="attr">count</span>: <span class="number">1</span> &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//2</span></span><br><span class="line"><span class="keyword">this</span>.setState(<span class="function"><span class="params">()</span> =&gt;</span> (&#123; <span class="attr">count</span>: <span class="number">1</span> &#125;));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3</span></span><br><span class="line"><span class="keyword">this</span>.setState(&#123; <span class="attr">count</span>: <span class="number">1</span> &#125;, () =&gt; &#123;</span><br><span class="line">  doSomething();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4</span></span><br><span class="line"><span class="keyword">this</span>.setState(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  doASomething();</span><br><span class="line">  <span class="keyword">return</span> &#123; <span class="attr">count</span>: <span class="number">1</span> &#125;;</span><br><span class="line">&#125;, () =&gt; &#123;</span><br><span class="line">  doBSomething();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<h4 id="2-拍打之后的事情"><a href="#2-拍打之后的事情" class="headerlink" title="2. 拍打之后的事情"></a>2. 拍打之后的事情</h4><p>调用了 setState 之后干了些什么</p>
-<ol>
+<h4 id="2-调用了-setState-之后干了些什么"><a href="#2-调用了-setState-之后干了些什么" class="headerlink" title="2. 调用了 setState 之后干了些什么"></a>2. 调用了 setState 之后干了些什么</h4><ol>
 <li>代码中调用 setState 函数之后，React 会将传入的参数对象与组件当前的状态合并，然后触发所谓的调和过程（Reconciliation）。</li>
 <li>经过调和过程，React 会以相对高效的方式根据新的状态构建 React 元素树并且着手重新渲染整个 UI 界面；</li>
 <li>在 React 得到元素树之后，React 会自动计算出新的树与老树的节点差异，然后根据差异对界面进行最小化重渲染；</li>
@@ -433,7 +432,7 @@
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; PureComponent &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> <span class="keyword">extends</span> <span class="title">PureComponent</span> </span>&#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">    count: <span class="number">0</span>,</span><br><span class="line">    reactCount: <span class="number">0</span>,</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'testButton'</span>).addEventListener(<span class="string">'click'</span>, () =&gt; <span class="keyword">this</span>.buttonClick())</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  buttonClick = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123; <span class="attr">count</span>: <span class="number">1</span> &#125;);</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123; <span class="attr">count</span>: <span class="number">2</span> &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  reactClick = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123; <span class="attr">reactCount</span>: <span class="number">1</span> &#125;);</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123; <span class="attr">reactCount</span>: <span class="number">2</span> &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; count, reactCount &#125; = <span class="keyword">this</span>.state;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`count`</span>, count);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`reactCount`</span>, reactCount);</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;&gt;</span><br><span class="line">        &lt;h1&gt;&#123;<span class="string">`button : <span class="subst">$&#123;<span class="keyword">this</span>.state.count&#125;</span>`</span>&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">        &lt;h1&gt;&#123;`react : $&#123;this.state.reactCount&#125;`&#125;&lt;/</span>h1&gt;</span><br><span class="line">        &lt;button id=<span class="string">"testButton"</span>&gt;test&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">        &lt;button onClick=&#123;() =&gt; this.reactClick()&#125;&gt;reactCount&lt;/</span>button&gt;</span><br><span class="line">      &lt;<span class="regexp">/&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
 
 <p>演示效果：<br><img src="https://github.com/NissenMaster/NissenMaster.github.io/blob/master/images/11201858.gif" alt="11201858.gif"></p>
-<p>图片显示有点问题，当点击绑定事件监听的 test 按钮时，数据会依次更新为1,2；而点击 reactCount 的按钮时，数据会直接变更 2。</p>
+<p>图片地址：<a href="https://github.com/NissenMaster/NissenMaster.github.io/blob/master/images/11201858.gif" target="_blank" rel="noopener">https://github.com/NissenMaster/NissenMaster.github.io/blob/master/images/11201858.gif</a><br>当点击绑定事件监听的 test 按钮时，数据会依次更新为1,2；而点击 reactCount 的按钮时，数据会直接变更 2。</p>
 <p>在 React 的 setState 函数实现中，会根据一个变量 isBatchingUpdates 判断是直接更新 this.state 还是放到队列中回头再说，而 isBatchingUpdates 默认是 false，也就表示 setState 会同步更新 this.state，但是，有一个函数 batchedUpdates，这个函数会把 isBatchingUpdates 修改为 true，而当 React 在调用事件处理函数之前就会调用这个 batchedUpdates，造成的后果，就是由 React 控制的事件处理过程 setState 不会同步更新 this.state。</p>
 <p>更详细的解释可以参考卢卡斯老师（Lucas HC）的一篇文章，挺精髓的：<a href="https://zhuanlan.zhihu.com/p/28905707" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/28905707</a></p>
 
@@ -638,7 +637,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-怎么拍"><span class="nav-number">1.</span> <span class="nav-text">1. 怎么拍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-拍打之后的事情"><span class="nav-number">2.</span> <span class="nav-text">2. 拍打之后的事情</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-同步与异步"><span class="nav-number">3.</span> <span class="nav-text">3. 同步与异步</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-用法"><span class="nav-number">1.</span> <span class="nav-text">1. 用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-调用了-setState-之后干了些什么"><span class="nav-number">2.</span> <span class="nav-text">2. 调用了 setState 之后干了些什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-同步与异步"><span class="nav-number">3.</span> <span class="nav-text">3. 同步与异步</span></a></li></ol></div>
             
 
           </div>
