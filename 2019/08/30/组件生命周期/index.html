@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="react,">
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="发上等愿，结中等缘，享下等福；择高处立，寻平处住，向宽处行">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Nissen&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/js/index.html">
+<meta name="description" content="生命周期其实主要分为四个阶段：组件初始化、组件挂载、组件更新、组件卸载。 组件初始化阶段constructor在该阶段组件中的构造方法 constructor() 接收父组件传下来的 props。还可以在 constructor() 内部定义定义this.state 的初始内容。注意：在组件中写了 constructor 方法就必须在里面使用 super()，并且应在其他语句之前前调用 super">
+<meta name="keywords" content="react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="组件生命周期">
+<meta property="og:url" content="http://yoursite.com/2019/08/30/组件生命周期/index.html">
 <meta property="og:site_name" content="Nissen&#39;s Blog">
-<meta property="og:description" content="发上等愿，结中等缘，享下等福；择高处立，寻平处住，向宽处行">
+<meta property="og:description" content="生命周期其实主要分为四个阶段：组件初始化、组件挂载、组件更新、组件卸载。 组件初始化阶段constructor在该阶段组件中的构造方法 constructor() 接收父组件传下来的 props。还可以在 constructor() 内部定义定义this.state 的初始内容。注意：在组件中写了 constructor 方法就必须在里面使用 super()，并且应在其他语句之前前调用 super">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-30T10:10:11.389Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nissen&#39;s Blog">
-<meta name="twitter:description" content="发上等愿，结中等缘，享下等福；择高处立，寻平处住，向宽处行">
+<meta name="twitter:title" content="组件生命周期">
+<meta name="twitter:description" content="生命周期其实主要分为四个阶段：组件初始化、组件挂载、组件更新、组件卸载。 组件初始化阶段constructor在该阶段组件中的构造方法 constructor() 接收父组件传下来的 props。还可以在 constructor() 内部定义定义this.state 的初始内容。注意：在组件中写了 constructor 方法就必须在里面使用 super()，并且应在其他语句之前前调用 super">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/js/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/30/组件生命周期/">
 
 
 
 
 
-  <title>标签: js | Nissen's Blog</title>
+  <title>组件生命周期 | Nissen's Blog</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -279,52 +281,218 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>js<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/30/组件生命周期/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="NissenMaster">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/timg.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nissen's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/08/22/表驱动/" itemprop="url">
-              
-                <span itemprop="name">表驱动法</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">组件生命周期</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-22T08:47:17+08:00" content="2019-08-22">
-          08-22
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-30T18:03:27+08:00">
+                2019-08-30
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>生命周期其实主要分为四个阶段：组件初始化、组件挂载、组件更新、组件卸载。</p>
+<h3 id="组件初始化阶段"><a href="#组件初始化阶段" class="headerlink" title="组件初始化阶段"></a>组件初始化阶段</h3><h4 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h4><p>在该阶段组件中的构造方法 constructor() 接收父组件传下来的 props。还可以在 constructor() 内部定义定义this.state 的初始内容。注意：在组件中写了 constructor 方法就必须在里面使用 super()，并且应在其他语句之前前调用 super(props)。否则，this.props 在构造函数中可能会出现未定义的 bug。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">constructor(props) &#123;</span><br><span class="line">  super(props)</span><br><span class="line">  console.log(this.props) // 在内部可以使用props</span><br><span class="line">  this.state = &#123;</span><br><span class="line">    //定义state初始值</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="组件挂载阶段"><a href="#组件挂载阶段" class="headerlink" title="组件挂载阶段"></a>组件挂载阶段</h3><h4 id="componentWillMount"><a href="#componentWillMount" class="headerlink" title="componentWillMount"></a>componentWillMount</h4><p>在组件将要挂载到 DOM 前调用，只会被调用一次，在该方法中修改 state 的值，并不会引起组件重新渲染。(数据请求等异步操作不建议写在该方法内，异步操作可能阻塞 UI)。</p>
+<h4 id="render"><a href="#render" class="headerlink" title="render()"></a>render()</h4><p>该函数会创建一个虚拟 DOM，用来表示组件的输出。只能通过 this.props 和 this.state 访问数据，且不能在里面执行 this.setState 更该组件状态。在 render 中可以返回 null、false 或者任何 React 组件，只能出现一个顶级组件，不能返回一组元素(在 react16 中有所改善，可以返回一组元素或单个字符串)。</p>
+<h4 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount"></a>componentDidMount</h4><p>组件挂载到 Dom 后调用，且只调用一次。此时组件已经生成对应的 DOM 结构，可以在该函数中通过ReactDOM.findDOMNode()访问到真实的 DOM 或者通过 this.refs.[refName] 属性获取真实 DOM 。(数据请求等异步操作建议写在该方法内)</p>
+<h3 id="组件更新阶段"><a href="#组件更新阶段" class="headerlink" title="组件更新阶段"></a>组件更新阶段</h3><h4 id="componentWillReceiveProps"><a href="#componentWillReceiveProps" class="headerlink" title="componentWillReceiveProps"></a>componentWillReceiveProps</h4><p>该函数接受一个参数 nextProps,当父组件重传props时会调用。拿到新的 props 与旧的 props 来比较是否变化，若变化可以通过 this.setState 更新 state。当然也可以不比较新旧 props 值直接更新 state。<br>官方提示：在componentWillReceiveProps中调用 this.setState() 将不会引起第二次渲染。<br>由于每次子组件接收到新的props，都会重新渲染一次，除非你使用 shouldComponentUpdate 来阻止重新渲染，但是你可以 componentWillReceiveProps 中根据新的 props 更新 state，虽然更新state也会触发一次重新渲染，但并不会触发额外的render。</p>
+<h4 id="shouldComponentUpdate-nextProps-nextState"><a href="#shouldComponentUpdate-nextProps-nextState" class="headerlink" title="shouldComponentUpdate(nextProps,nextState)"></a>shouldComponentUpdate(nextProps,nextState)</h4><p>该函数是唯一可以控制组件渲染的生命周期。如果 props 和 state 的改变不需要重新渲染组件。则可以在该函数内返回 false，阻止组件的重新渲染。为了优化组件性能，减少组件的不必要渲染。</p>
+<h4 id="componentWillUpdate-nextProps-nextState"><a href="#componentWillUpdate-nextProps-nextState" class="headerlink" title="componentWillUpdate(nextProps,nextState)"></a>componentWillUpdate(nextProps,nextState)</h4><p>shouldComponentUpdate 方法返回 true 后，在组件即将进行重新渲染前调用该函数(注意不要里面去更新 props 或者 state，会导致组件进入死循环),在这之后会调用 render 方法进行重新渲染。</p>
+<h4 id="componentDidUpdate-prevProps-prevState"><a href="#componentDidUpdate-prevProps-prevState" class="headerlink" title="componentDidUpdate(prevProps,prevState)"></a>componentDidUpdate(prevProps,prevState)</h4><p>组件被重新渲染后该方法会被调用，可以拿到更新前的 props 和 state 。除了首次渲染时调用的componentDidMount，之后每次渲染都会调用该函数。和 componentDidMount 类似的是可以在这里操作更新后的DOM。</p>
+<p>###组件卸载阶段</p>
+<h4 id="componentWillUnmount"><a href="#componentWillUnmount" class="headerlink" title="componentWillUnmount"></a>componentWillUnmount</h4><p>该函数在组件卸载前被调用，可以在执行一些清理工作，比如清除组件中使用的定时器或者事件监听器，以避免引起内存泄漏。</p>
+<hr>
+<p>react16的生命周期新引入了三个新的生命周期函数：getDerivedStateFromProps，getSnapshotBeforeUpdate，componentDidCatch,弃用的三个生命周期函数：componentWillMount、componentWillReceiveProps，componentWillUpdate。</p>
+<h4 id="getDerivedStateFromProps-props-state"><a href="#getDerivedStateFromProps-props-state" class="headerlink" title="getDerivedStateFromProps(props, state)"></a>getDerivedStateFromProps(props, state)</h4><p>该函数在组件挂载阶段和后续更新阶段调用，根据 props 和 state 两个参数，计算出预期的状态改变，返回一个对象表示新的 state进行更新；如果不需要更新，返回 null 即可。该函数用来替代 componentWillReceiveProps。</p>
+<h4 id="getSnapshotBeforeUpdate-prevProps-prevState"><a href="#getSnapshotBeforeUpdate-prevProps-prevState" class="headerlink" title="getSnapshotBeforeUpdate(prevProps, prevState)"></a>getSnapshotBeforeUpdate(prevProps, prevState)</h4><p>该函数在render之后被调用，可以读取但无法使用DOM的时候。它使得组件能在发生更改之前从 DOM 中捕获一些信息(例如，滚动位置)。返回值将作为componentDidUpdate的第三个参数。该函数配合componentDidUpdate, 可以替代componentWillUpdate。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> getDerivedStateFromError()</span><br></pre></td></tr></table></figure>
+
+<p>此生命周期会在后代组件抛出错误后被调用。 它将抛出的错误作为参数，并返回一个值以更新 state。</p>
+<h4 id="componentDidCatch-error，info"><a href="#componentDidCatch-error，info" class="headerlink" title="componentDidCatch(error，info)"></a>componentDidCatch(error，info)</h4><p>任何一处的javascript会触发该函数。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>目前最新的生命周期可以总结为：</p>
+<ol>
+<li>组件挂载阶段<br>constructor<br>getDerivedStateFromProps<br>render<br>componentDidMount</li>
+<li>组件更新阶段<br>getDerivedStateFromProps<br>shouldComponentUpdate<br>render<br>getSnapshotBeforeUpdate<br>componentDidUpdate</li>
+<li>组件卸载阶段<br>componentWillUnmount</li>
+</ol>
+<p>参考链接：<br><a href="https://reactjs.org/docs/react-component.html" target="_blank" rel="noopener">react官方文档</a></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/react/" rel="tag"># react</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/23/setState/" rel="next" title="React-setState">
+                <i class="fa fa-chevron-left"></i> React-setState
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -332,6 +500,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -352,8 +524,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -443,6 +624,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#组件初始化阶段"><span class="nav-number">1.</span> <span class="nav-text">组件初始化阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#constructor-NaN"><span class="nav-number">1.1.</span> <span class="nav-text">constructor</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件挂载阶段"><span class="nav-number">2.</span> <span class="nav-text">组件挂载阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#componentWillMount"><span class="nav-number">2.1.</span> <span class="nav-text">componentWillMount</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#render"><span class="nav-number">2.2.</span> <span class="nav-text">render()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#componentDidMount"><span class="nav-number">2.3.</span> <span class="nav-text">componentDidMount</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件更新阶段"><span class="nav-number">3.</span> <span class="nav-text">组件更新阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#componentWillReceiveProps"><span class="nav-number">3.1.</span> <span class="nav-text">componentWillReceiveProps</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shouldComponentUpdate-nextProps-nextState"><span class="nav-number">3.2.</span> <span class="nav-text">shouldComponentUpdate(nextProps,nextState)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#componentWillUpdate-nextProps-nextState"><span class="nav-number">3.3.</span> <span class="nav-text">componentWillUpdate(nextProps,nextState)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#componentDidUpdate-prevProps-prevState"><span class="nav-number">3.4.</span> <span class="nav-text">componentDidUpdate(prevProps,prevState)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#componentWillUnmount"><span class="nav-number">3.5.</span> <span class="nav-text">componentWillUnmount</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#getDerivedStateFromProps-props-state"><span class="nav-number">3.6.</span> <span class="nav-text">getDerivedStateFromProps(props, state)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#getSnapshotBeforeUpdate-prevProps-prevState"><span class="nav-number">3.7.</span> <span class="nav-text">getSnapshotBeforeUpdate(prevProps, prevState)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#componentDidCatch-error，info"><span class="nav-number">3.8.</span> <span class="nav-text">componentDidCatch(error，info)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -599,6 +796,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
