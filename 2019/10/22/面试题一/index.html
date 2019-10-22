@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="面试,前端,面试题,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.页面从输入URL到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）1.输入域名地址2.发送至DNS服务器并获得域名对应的WEB服务器IP地址；3.与WEB服务器建立TCP连接；4.服务器的永久重定向响应（从 http://example.com 到 http://www.example.com）5.浏览器跟踪重定向地址6.服务器处理请求7.服务器返回一个HTTP响应8.浏览器显">
+<meta name="keywords" content="面试,前端,面试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试题一">
+<meta property="og:url" content="http://yoursite.com/2019/10/22/面试题一/index.html">
+<meta property="og:site_name" content="Nissen&#39;s Blog">
+<meta property="og:description" content="1.页面从输入URL到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）1.输入域名地址2.发送至DNS服务器并获得域名对应的WEB服务器IP地址；3.与WEB服务器建立TCP连接；4.服务器的永久重定向响应（从 http://example.com 到 http://www.example.com）5.浏览器跟踪重定向地址6.服务器处理请求7.服务器返回一个HTTP响应8.浏览器显">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-22T07:55:15.828Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试题一">
+<meta name="twitter:description" content="1.页面从输入URL到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）1.输入域名地址2.发送至DNS服务器并获得域名对应的WEB服务器IP地址；3.与WEB服务器建立TCP连接；4.服务器的永久重定向响应（从 http://example.com 到 http://www.example.com）5.浏览器跟踪重定向地址6.服务器处理请求7.服务器返回一个HTTP响应8.浏览器显">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/10/22/面试题一/">
+
+
+
+
+
+  <title>面试题一 | Nissen's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nissen's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一个才疏学浅的前端打字员</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-类别">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            类别
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-全部">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            全部
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/22/面试题一/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="NissenMaster">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/timg.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nissen's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">面试题一</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-22T15:51:46+08:00">
+                2019-10-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试题/" itemprop="url" rel="index">
+                    <span itemprop="name">面试题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="1-页面从输入URL到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）"><a href="#1-页面从输入URL到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）" class="headerlink" title="1.页面从输入URL到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）"></a>1.页面从输入URL到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）</h4><p>1.输入域名地址<br>2.发送至DNS服务器并获得域名对应的WEB服务器IP地址；<br>3.与WEB服务器建立TCP连接；<br>4.服务器的永久重定向响应（从 <a href="http://example.com" target="_blank" rel="noopener">http://example.com</a> 到 <a href="http://www.example.com）" target="_blank" rel="noopener">http://www.example.com）</a><br>5.浏览器跟踪重定向地址<br>6.服务器处理请求<br>7.服务器返回一个HTTP响应<br>8.浏览器显示 HTML<br>9.浏览器发送请求获取的资源（如图片、音频、视频、CSS、JS等等）<br>10.浏览器发送异步请求</p>
+<h4 id="2-浏览器工作原理"><a href="#2-浏览器工作原理" class="headerlink" title="2.浏览器工作原理"></a>2.浏览器工作原理</h4><p>1.用户界面 2.网络 3.UI后端 4.数据存储 5.浏览器引擎 6.渲染引擎 7.js解释器</p>
+<h4 id="3-浏览器解析过程："><a href="#3-浏览器解析过程：" class="headerlink" title="3.浏览器解析过程："></a>3.浏览器解析过程：</h4><p>流程：解析html以构建dom树-&gt;构建render树-&gt;布局render树-&gt;绘制render树</p>
+<h4 id="4-介绍一下你对浏览器内核的理解？"><a href="#4-介绍一下你对浏览器内核的理解？" class="headerlink" title="4.介绍一下你对浏览器内核的理解？"></a>4.介绍一下你对浏览器内核的理解？</h4><p>主要分成两部分：渲染引擎(layout engineer或Rendering Engine)和JS引擎。<br>渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入CSS等），以及计算网页的显示方式，然后会输出至显示器或打印机。</p>
+<p>浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。</p>
+<p>JS引擎则：解析和执行javascript来实现网页的动态效果。<br>最开始渲染引擎和JS引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。</p>
+<h4 id="5-常见的浏览器内核有哪些？"><a href="#5-常见的浏览器内核有哪些？" class="headerlink" title="5.常见的浏览器内核有哪些？"></a>5.常见的浏览器内核有哪些？</h4><p>Trident内核：IE,360，傲游，搜狗，世界之窗，腾讯等。[又称MSHTML]<br>Gecko内核：Netscape6及以上版本，FF,MozillaSuite/SeaMonkey等<br>Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;]<br>Webkit内核：Safari,Chrome等。 [ Chrome的：Blink（WebKit的分支）]</p>
+<h4 id="6-请描述一下-cookies，sessionStorage-和-localStorage-的区别？"><a href="#6-请描述一下-cookies，sessionStorage-和-localStorage-的区别？" class="headerlink" title="6.请描述一下 cookies，sessionStorage 和 localStorage 的区别？"></a>6.请描述一下 cookies，sessionStorage 和 localStorage 的区别？</h4><p>cookie是网站为了标示用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密），数据会在浏览器和服务器间来回传递。<br>sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。<br>存储大小：<br>cookie数据大小不能超过4k。<br>sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，<br>可以达到5M或更大。<br>有期时间：<br>localStorage    存储持久数据，浏览器关闭后数据不丢失除非主动删除数据；<br>sessionStorage  数据在当前浏览器窗口关闭后自动删除。<br>cookie          设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭</p>
+<h4 id="7-请大概描述下页面访问cookie的限制条件"><a href="#7-请大概描述下页面访问cookie的限制条件" class="headerlink" title="7.请大概描述下页面访问cookie的限制条件"></a>7.请大概描述下页面访问cookie的限制条件</h4><p>跨域问题，设置了HttpOnly。</p>
+<h4 id="8-如何实现浏览器内多个标签页之间的通信-阿里"><a href="#8-如何实现浏览器内多个标签页之间的通信-阿里" class="headerlink" title="8.如何实现浏览器内多个标签页之间的通信? (阿里)"></a>8.如何实现浏览器内多个标签页之间的通信? (阿里)</h4><p>调用localstorge、cookies等本地存储方式</p>
+<h4 id="9-页面可见性（Page-Visibility-API）-可以有哪些用途？"><a href="#9-页面可见性（Page-Visibility-API）-可以有哪些用途？" class="headerlink" title="9.页面可见性（Page Visibility API） 可以有哪些用途？"></a>9.页面可见性（Page Visibility API） 可以有哪些用途？</h4><p>通过 visibilityState 的值检测页面当前是否可见，以及打开网页的时间等;<br>在页面被切换到其他后台进程的时候，自动暂停音乐或视频的播放</p>
+<h4 id="10-网页验证码是做什么的，是为了解决什么安全问题。"><a href="#10-网页验证码是做什么的，是为了解决什么安全问题。" class="headerlink" title="10.网页验证码是做什么的，是为了解决什么安全问题。"></a>10.网页验证码是做什么的，是为了解决什么安全问题。</h4><p>区分用户是计算机还是人的公共全自动程序。可以防止恶意破解密码、刷票、论坛灌水；<br>有效防止黑客对某一个特定注册用户用特定程序暴力破解方式进行不断的登陆尝试。</p>
+<h4 id="11-为什么利用多个域名来存储网站资源？"><a href="#11-为什么利用多个域名来存储网站资源？" class="headerlink" title="11.为什么利用多个域名来存储网站资源？"></a>11.为什么利用多个域名来存储网站资源？</h4><p>CDN缓存更方便 ，突破浏览器并发限制<br>节约cookie带宽 ，节约主域名的连接数，优化页面响应速度 防止不必要的安全问题</p>
+<h4 id="12-谈一下你对网页标准和标准制定机构重要性的理解。"><a href="#12-谈一下你对网页标准和标准制定机构重要性的理解。" class="headerlink" title="12.谈一下你对网页标准和标准制定机构重要性的理解。"></a>12.谈一下你对网页标准和标准制定机构重要性的理解。</h4><p>网页标准和标准制定机构都是为了能让web发展的更‘健康’，开发者遵循统一的标准，降低开发难度，开发成本，SEO也会更好做，也不会因为滥用代码导致各种BUG、安全问题，最终提高网站易用性。</p>
+<h4 id="13-知道什么是微格式吗？"><a href="#13-知道什么是微格式吗？" class="headerlink" title="13.知道什么是微格式吗？"></a>13.知道什么是微格式吗？</h4><p>微格式（Microformats）是一种让机器可读的语义化XHTML词汇的集合，是结构化数据的开放标准。是为特殊应用而制定的特殊格式</p>
+<p>优点：将智能数据添加到网页上，让网站内容在搜索引擎结果界面可以显示额外的提示。</p>
+<h4 id="14-一个页面上有大量的图片，加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。"><a href="#14-一个页面上有大量的图片，加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。" class="headerlink" title="14.一个页面上有大量的图片，加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。"></a>14.一个页面上有大量的图片，加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。</h4><p>（1）图片懒加载，在页面上的未可视区域可以添加一个滚动条事件，判断图片位置与浏览器顶端的距离与页面的距离，如果前者小于后者，优先加载。<br>（2）如果为幻灯片、相册等，可以使用图片预加载技术，将当前展示图片的前一张和后一张优先下载。<br>（3）如果图片过大，可以使用特殊编码的图片，加载时会先加载一张压缩的特别厉害的缩略图，以提高用户体验。<br>（4）如果图片展示区域小于图片的真实大小，则因在服务器端根据业务需要先行进行图片压缩，图片压缩后大小与展示一致。</p>
+<h4 id="15-谈谈以前端角度出发做好SEO（搜索引擎）需要考虑什么？"><a href="#15-谈谈以前端角度出发做好SEO（搜索引擎）需要考虑什么？" class="headerlink" title="15.谈谈以前端角度出发做好SEO（搜索引擎）需要考虑什么？"></a>15.谈谈以前端角度出发做好SEO（搜索引擎）需要考虑什么？</h4><p>合理的标签使用， 主要的互联网目录，链接交换和链接广泛度。</p>
+<h4 id="16-请写出一些前端性能优化的方式，越多越好"><a href="#16-请写出一些前端性能优化的方式，越多越好" class="headerlink" title="16.请写出一些前端性能优化的方式，越多越好"></a>16.请写出一些前端性能优化的方式，越多越好</h4><p>1.减少dom操作<br>2.部署前，图片压缩，代码压缩<br>3.优化js代码结构，减少冗余代码<br>4.减少http请求，合理设置 HTTP缓存<br>5.使用内容分发cdn加速<br>6.静态资源缓存<br>7.图片延迟加载</p>
+<h4 id="17-描述一下渐进增强和优雅降级之间的不同"><a href="#17-描述一下渐进增强和优雅降级之间的不同" class="headerlink" title="17.描述一下渐进增强和优雅降级之间的不同?"></a>17.描述一下渐进增强和优雅降级之间的不同?</h4><p>区别：优雅降级是从复杂的现状开始，并试图减少用户体验的供给，而渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要。降级（功能衰减）意味着往回看；而渐进增强则意味着朝前看，同时保证其根基处于安全地带。</p>
+<h4 id="18-webSocket如何兼容低浏览器？-阿里"><a href="#18-webSocket如何兼容低浏览器？-阿里" class="headerlink" title="18.webSocket如何兼容低浏览器？(阿里)"></a>18.webSocket如何兼容低浏览器？(阿里)</h4><p>Adobe Flash Socket 、<br>ActiveX HTMLFile (IE) 、<br>基于 multipart 编码发送 XHR 、<br>基于长轮询的 XHR</p>
+<h4 id="19-web开发中会话跟踪的方法有哪些"><a href="#19-web开发中会话跟踪的方法有哪些" class="headerlink" title="19.web开发中会话跟踪的方法有哪些"></a>19.web开发中会话跟踪的方法有哪些</h4><p>1.cookie 2.session<br>2.url重写 4.隐藏input 5.ip地址</p>
+<h4 id="20-HTTP-method"><a href="#20-HTTP-method" class="headerlink" title="20.HTTP method"></a>20.HTTP method</h4><p>1.一台服务器要与HTTP1.1兼容，只要为资源实现GET和HEAD方法即可。<br>2.GET是最常用的方法，通常用于请求服务器发送某个资源。<br>3.HEAD与GET类似，但服务器在响应中值返回首部，不返回实体的主体部分。<br>4.PUT让服务器用请求的主体部分来创建一个由所请求的URL命名的新文档，或者，如果那个URL已经存在的话，就用干这个主体替代它。<br>5.POST起初是用来向服务器输入数据的。实际上，通常会用它来支持HTML的表单。表单中填好的数据通常会被送给服务器，然后由服务器将其发送到要去的地方。<br>6.TRACE会在目的服务器端发起一个环回诊断，最后一站的服务器会弹回一个TRACE响应并在响应主体中携带它收到的原始请求报文。TRACE方法主要用于诊断，用于验证请求是否如愿穿过了请求/响应链。<br>7.OPTIONS方法请求web服务器告知其支持的各种功能。可以查询服务器支持哪些方法或者对某些特殊资源支持哪些方法。<br>8.DELETE请求服务器删除请求URL指定的资源。</p>
+<h4 id="21-HTTP-response报文结构是怎样的"><a href="#21-HTTP-response报文结构是怎样的" class="headerlink" title="21.HTTP response报文结构是怎样的"></a>21.HTTP response报文结构是怎样的</h4><p>rfc2616中进行了定义：<br>1.首行是状态行包括：HTTP版本，状态码，状态描述，后面跟一个CRLF<br>2.首行之后是若干行响应头，包括：通用头部，响应头部，实体头部<br>3.响应头部和响应实体之间用一个CRLF空行分隔</p>
+<h4 id="22-HTTP状态码及其含义"><a href="#22-HTTP状态码及其含义" class="headerlink" title="22.HTTP状态码及其含义"></a>22.HTTP状态码及其含义</h4><p>状态码类型<br>状态码 类别 原因短语<br>1XX Information（信息性状态码） 接收的请求正在处理<br>2XX Success（成功状态码） 请求正常处理完毕<br>3XX Redirection（重定向状态码） 需要进行附加的操作以完成请求<br>4XX Client Error（客户端错误状态码） 服务器无法处理请求<br>5XX Server Error（服务端错误状态码） 服务器处理请求出错<br>204：服务器成功处理，但未返回内容。<br>304：Not Modified 未修改。所请求的资源未修改，服务器返回此状态码时，不会返回任何资源。客户端通常会缓存访问过的资源，通过提供一个头信息指出客户端希望只返回在指定日期之后修改的资源<br>400：Bad Request 客户端请求的语法错误，服务器无法理解<br>403：Forbidden 服务器理解请求客户端的请求，但是拒绝执行此请求<br>404：Not Found 服务器无法根据客户端的请求找到资源（网页）。通过此代码，网站设计人员可设置”您所请求的资源无法找到”的个性页面</p>
+<h4 id="23-什么是同源：协议相同-域名相同-端口相同"><a href="#23-什么是同源：协议相同-域名相同-端口相同" class="headerlink" title="23.什么是同源：协议相同 域名相同 端口相同"></a>23.什么是同源：协议相同 域名相同 端口相同</h4><p>同源政策的目的，是为了保证用户信息的安全，防止恶意的网站窃取数据。<br>如果非同源，共有三种行为受到限制。<br>（1） Cookie、LocalStorage 和 IndexDB 无法读取。<br>（2） DOM 无法获得。<br>（3） AJAX 请求不能发送。</p>
+<h4 id="24-关于建站安全防护"><a href="#24-关于建站安全防护" class="headerlink" title="24.关于建站安全防护"></a>24.关于建站安全防护</h4><p>答：要做好防XSS、CSRF、SQL注入攻击.DDOS攻击。<br>XSS概念:<br>译为跨站脚本攻击,具体是指攻击者在Web页面里插入恶意Script脚本，当用户浏览该网页时，Script代码会被执行，从而进行恶意攻击。<br>XSS预防:<br>关键cookie字段设置httpOnly<br>输入检查,特殊字符 &lt; &gt; / &amp;等,对其进行转义后存储<br>CSRF概念：<br>本质上讲，是黑客将一个http接口中需要传递的所有参数都预测出来，然后不管以什么方式，他都可以根据他的目的来任意调用你的接口，对服务器实现CURD。<br>CSRF 预防：<br>使用验证码，更高级用图灵测试<br>SQL概念：<br>通常没有任何过滤，直接把参数存放到了SQL语句当中<br>SQL预防：<br>根本上防止SQL注入的方法，就是参数化查询或者做词法分析。<br>DDOS概念：<br>利用木桶原理，寻找利用系统应用的瓶颈；阻塞和耗尽；当前问题：用户的带宽小于攻击的规模，噪声访问带宽成为木桶的短板。<br>DDOS预防：用软硬件结合的方式来防御是最有效的</p>
+<h4 id="25-对前端工程化的理解"><a href="#25-对前端工程化的理解" class="headerlink" title="25.对前端工程化的理解"></a>25.对前端工程化的理解</h4><p>1.开发规范<br>2.模块化开发<br>3.组件化开发<br>4.组件仓库<br>5.性能优化<br>6.项目部署<br>7.开发流程<br>8.开发工具</p>
+<h4 id="26-AMD和CMD是什么？它们的区别有哪些？"><a href="#26-AMD和CMD是什么？它们的区别有哪些？" class="headerlink" title="26.AMD和CMD是什么？它们的区别有哪些？"></a>26.AMD和CMD是什么？它们的区别有哪些？</h4><p>AMD和CMD是二种模块定义规范。现在都使用模块化编程，AMD，异步模块定义；CMD，通用模块定义。AMD依赖前置，CMD依赖就近。CMD的API职责单一，没有全局require，AMD的一个API可以多用。</p>
+<h4 id="27-MVC-BFC"><a href="#27-MVC-BFC" class="headerlink" title="27.MVC BFC"></a>27.MVC BFC</h4><p>mvc是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范使用MVC的目的是将M和V的实现代码分离，从而使同一个程序可以使用不同的表现形式。MVC对应Html，CSS，js。</p>
+<p>BFC全称”Block Formatting Context”, 中文为“块级格式化上下文”。流体特性：块状水平元素，如div元素（下同），在默认情况下（非浮动、绝对定位等），水平方向会自动填满外部的容器；BFC元素特性表现原则就是，内部子元素不会影响外部的元素。</p>
+<h4 id="28-你如何对网站的文件和资源进行优化？"><a href="#28-你如何对网站的文件和资源进行优化？" class="headerlink" title="28.你如何对网站的文件和资源进行优化？"></a>28.你如何对网站的文件和资源进行优化？</h4><p>期待的解决方案包括：文件合并文件最小化/文件压缩使用CDN托管缓存的使用（多个域名来提供缓存）其他。</p>
+<h4 id="29-如果网页内容需要支持多语言，你会怎么做？"><a href="#29-如果网页内容需要支持多语言，你会怎么做？" class="headerlink" title="29.如果网页内容需要支持多语言，你会怎么做？"></a>29.如果网页内容需要支持多语言，你会怎么做？</h4><p>1.应用字符集的选择，选择UTF-8编码<br>2.语言书写习惯&amp;导航结构<br>3.数据库驱动型网站</p>
+<h4 id="30-如果设计中使用了非标准的字体，你该如何去实现？"><a href="#30-如果设计中使用了非标准的字体，你该如何去实现？" class="headerlink" title="30.如果设计中使用了非标准的字体，你该如何去实现？"></a>30.如果设计中使用了非标准的字体，你该如何去实现？</h4><p>所谓的标准字体是多数机器上都会有的，或者即使没有也可以由默认字体替代的字体。<br>方法：<br>用图片代替<br>web fonts在线字库，如Google Webfonts，Typekit等等；<a href="http://www.chinaz.com/free/20...；" target="_blank" rel="noopener">http://www.chinaz.com/free/20...；</a><br>@font-face，Webfonts(字体服务例如：Google Webfonts，Typekit等等。)</p>
+<h4 id="31-如何自学一门新编程语言"><a href="#31-如何自学一门新编程语言" class="headerlink" title="31.如何自学一门新编程语言"></a>31.如何自学一门新编程语言</h4><p>(1)了解背景知识：历史、现状、特点、应用领域、发展趋势<br>(2)搭建开发环境，编写HelloWorld<br>(3)声明变量和常量<br>(4)数据类型<br>(5)运算符<br>(6)逻辑结构<br>(7)通用小程序<br>(8)函数和对象<br>(9)第三方库、组件、框架<br>(10)实用项目</p>
+<h4 id="32-什么是哈希表？"><a href="#32-什么是哈希表？" class="headerlink" title="32.什么是哈希表？"></a>32.什么是哈希表？</h4><p>散列表（也叫哈希表），是根据关键码值直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。</p>
+<h4 id="33-静态网页和动态网页区别："><a href="#33-静态网页和动态网页区别：" class="headerlink" title="33.静态网页和动态网页区别："></a>33.静态网页和动态网页区别：</h4><p>静态:网页内容任何人在任何时间访问都是不变的<br>HTML/CSS/JS/视频/音频<br>动态:网页内容不同人在不同时间访问可能是不同的<br>   JSP/PHP/ASP.NET/Node.JS</p>
+<h4 id="34-SQL语句的分类"><a href="#34-SQL语句的分类" class="headerlink" title="34.SQL语句的分类"></a>34.SQL语句的分类</h4><p>DDL:数据定义语句 CREATE/DROP/ALTER…<br>DCL:数据控制语句 GRANT…<br>DML:操作操作语句 INSERT/UPDATE/DELETE<br>DQL:查询语句 SELECT</p>
+<h4 id="35-什么是弹性布局？"><a href="#35-什么是弹性布局？" class="headerlink" title="35.什么是弹性布局？"></a>35.什么是弹性布局？</h4><p>解决某元素中“子元素”的布局方式，为布局提供最大的灵活性。<br>设为flex布局以后，子元素的float、clear和vertical-align属性将失效!!!<br>display:flex; 属性align-self 定义子元素的位置。</p>
+<h4 id="36-编写响应式？"><a href="#36-编写响应式？" class="headerlink" title="36.编写响应式？"></a>36.编写响应式？</h4><p>1.声明viewport元标签 2.使用流式布局 3.所有容器使用相对尺寸，不用绝对尺寸4.（最重要原则）使用CSS3 Media Query技术</p>
+<h4 id="37-常见的浏览器兼容问题？"><a href="#37-常见的浏览器兼容问题？" class="headerlink" title="37.常见的浏览器兼容问题？"></a>37.常见的浏览器兼容问题？</h4><p>1.不同浏览器的标签默认的内.外补丁不同。<br>*{margin:0;padding:0;}<br>2.图片默认有间距<br>使用float属性为img布局<br>3.居中问题（而FF默认为左对齐）<br>margin: 0 auto;<br>4.CSS 兼容前缀<br>-ms- IE<br>-moz- Firefox<br>-o- Opera<br>-webkit- Chrome<br>5.使用CSS Hack<br>如： +:IE6,7的前缀</p>
+<p>  -:IE6的前缀</p>
+<h4 id="38-H5新特性："><a href="#38-H5新特性：" class="headerlink" title="38.H5新特性："></a>38.H5新特性：</h4><p>(1)Canvas绘图<br>(2)SVG绘图<br>(3)地理定位<br>(4)Web Worker<br>web worker 是运行在后台的 JS，独立于其他脚本，不会影响页面的性能。<br>(5)Web Storage<br>1.Cookie技术 （ 兼容性好,数据不能超4kb,操作复杂）2.（兼容性差,数据8MB,操作简单）sessionStorage 3.localStorage<br>(6)Web Socket<br>WebSocket协议是基于TCP的一种新的网络协议。它实现了浏览器与服务器全双工(full-duplex)通信——允许服务器主动发送信息给客户端。</p>
+<h4 id="39-C3新特性："><a href="#39-C3新特性：" class="headerlink" title="39.C3新特性："></a>39.C3新特性：</h4><p>1.复杂的选择器<br>2.弹性布局<br>3.动画</p>
+<h4 id="40-什么是typescript"><a href="#40-什么是typescript" class="headerlink" title="40.什么是typescript"></a>40.什么是typescript</h4><p>1.它是JavaScript的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。<br>2.TypeScript扩展了JavaScript的语法，所以任何现有的JavaScript程序可以不加改变的在TypeScript下工作。<br>TypeScript是为大型应用之开发而设计，而编译时它产生 JavaScript 以确保兼容性。</p>
+<h4 id="41-三大框架的区别："><a href="#41-三大框架的区别：" class="headerlink" title="41.三大框架的区别："></a>41.三大框架的区别：</h4><p>Angular带有比较强的排它性的<br>React主张是函数式编程的理念，侵入性没有Angular那么强，主要因为它是软性侵入。<br>Vue 渐进式的</p>
+<h4 id="42-spa应用"><a href="#42-spa应用" class="headerlink" title="42.spa应用"></a>42.spa应用</h4><p>优点：用户体验好 、良好的前后端分离。<br>缺点：<br>1.不利于SEO。<br>2.初次加载耗时相对增多。<br>3.导航不可用，如果一定要导航需要自行实现前进、后退。</p>
+<h4 id="43-什么是模块化编程？"><a href="#43-什么是模块化编程？" class="headerlink" title="43.什么是模块化编程？"></a>43.什么是模块化编程？</h4><p>每个模块内部，module变量代表当前模块。<br>这个变量是一个对象，它的exports属性（即module.exports）是对外的接口。加载某个模块，其实是加载该模块的module.exports属性。</p>
+<h4 id="44-性能优化？"><a href="#44-性能优化？" class="headerlink" title="44.性能优化？"></a>44.性能优化？</h4><p>1.使用 CDN<br>2.图片懒加载<br>3.使用外部 JavaScript 和 CSS<br>4.压缩 JavaScript 、 CSS 、字体、图片等<br>5.优化 CSS Sprite<br>6.减少 HTTP 请求数<br>7.减少 DNS 查询<br>8减少 DOM 元素数量<br>9.减少 DOM 操作<br>10.把脚本放在页面底部</p>
+<h4 id="45-什么是HTTP协议："><a href="#45-什么是HTTP协议：" class="headerlink" title="45.什么是HTTP协议："></a>45.什么是HTTP协议：</h4><p>HTTP是一个客户端和服务器端请求和应答的标准（TCP）。<br>HTTP1.1和2.0协议的区别：<br>HTTP1.1不支持header数据的压缩，而2.0支持</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+            <a href="/tags/面试题/" rel="tag"># 面试题</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/03/Proxy/" rel="next" title="Proxy">
+                <i class="fa fa-chevron-left"></i> Proxy
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/22/dva-loading/" rel="prev" title="dva-loading">
+                dva-loading <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/timg.jpg" alt="NissenMaster">
+            
+              <p class="site-author-name" itemprop="name">NissenMaster</p>
+              <p class="site-description motion-element" itemprop="description">发上等愿，结中等缘，享下等福；择高处立，寻平处住，向宽处行</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/NissenMaster" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:yourname@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-页面从输入URL到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）"><span class="nav-number">1.</span> <span class="nav-text">1.页面从输入URL到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-浏览器工作原理"><span class="nav-number">2.</span> <span class="nav-text">2.浏览器工作原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-浏览器解析过程："><span class="nav-number">3.</span> <span class="nav-text">3.浏览器解析过程：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-介绍一下你对浏览器内核的理解？"><span class="nav-number">4.</span> <span class="nav-text">4.介绍一下你对浏览器内核的理解？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-常见的浏览器内核有哪些？"><span class="nav-number">5.</span> <span class="nav-text">5.常见的浏览器内核有哪些？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-请描述一下-cookies，sessionStorage-和-localStorage-的区别？"><span class="nav-number">6.</span> <span class="nav-text">6.请描述一下 cookies，sessionStorage 和 localStorage 的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-请大概描述下页面访问cookie的限制条件"><span class="nav-number">7.</span> <span class="nav-text">7.请大概描述下页面访问cookie的限制条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-如何实现浏览器内多个标签页之间的通信-阿里"><span class="nav-number">8.</span> <span class="nav-text">8.如何实现浏览器内多个标签页之间的通信? (阿里)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-页面可见性（Page-Visibility-API）-可以有哪些用途？"><span class="nav-number">9.</span> <span class="nav-text">9.页面可见性（Page Visibility API） 可以有哪些用途？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-网页验证码是做什么的，是为了解决什么安全问题。"><span class="nav-number">10.</span> <span class="nav-text">10.网页验证码是做什么的，是为了解决什么安全问题。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-为什么利用多个域名来存储网站资源？"><span class="nav-number">11.</span> <span class="nav-text">11.为什么利用多个域名来存储网站资源？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-谈一下你对网页标准和标准制定机构重要性的理解。"><span class="nav-number">12.</span> <span class="nav-text">12.谈一下你对网页标准和标准制定机构重要性的理解。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-知道什么是微格式吗？"><span class="nav-number">13.</span> <span class="nav-text">13.知道什么是微格式吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-一个页面上有大量的图片，加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。"><span class="nav-number">14.</span> <span class="nav-text">14.一个页面上有大量的图片，加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15-谈谈以前端角度出发做好SEO（搜索引擎）需要考虑什么？"><span class="nav-number">15.</span> <span class="nav-text">15.谈谈以前端角度出发做好SEO（搜索引擎）需要考虑什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16-请写出一些前端性能优化的方式，越多越好"><span class="nav-number">16.</span> <span class="nav-text">16.请写出一些前端性能优化的方式，越多越好</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17-描述一下渐进增强和优雅降级之间的不同"><span class="nav-number">17.</span> <span class="nav-text">17.描述一下渐进增强和优雅降级之间的不同?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#18-webSocket如何兼容低浏览器？-阿里"><span class="nav-number">18.</span> <span class="nav-text">18.webSocket如何兼容低浏览器？(阿里)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#19-web开发中会话跟踪的方法有哪些"><span class="nav-number">19.</span> <span class="nav-text">19.web开发中会话跟踪的方法有哪些</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#20-HTTP-method"><span class="nav-number">20.</span> <span class="nav-text">20.HTTP method</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#21-HTTP-response报文结构是怎样的"><span class="nav-number">21.</span> <span class="nav-text">21.HTTP response报文结构是怎样的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22-HTTP状态码及其含义"><span class="nav-number">22.</span> <span class="nav-text">22.HTTP状态码及其含义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#23-什么是同源：协议相同-域名相同-端口相同"><span class="nav-number">23.</span> <span class="nav-text">23.什么是同源：协议相同 域名相同 端口相同</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#24-关于建站安全防护"><span class="nav-number">24.</span> <span class="nav-text">24.关于建站安全防护</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#25-对前端工程化的理解"><span class="nav-number">25.</span> <span class="nav-text">25.对前端工程化的理解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#26-AMD和CMD是什么？它们的区别有哪些？"><span class="nav-number">26.</span> <span class="nav-text">26.AMD和CMD是什么？它们的区别有哪些？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#27-MVC-BFC"><span class="nav-number">27.</span> <span class="nav-text">27.MVC BFC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#28-你如何对网站的文件和资源进行优化？"><span class="nav-number">28.</span> <span class="nav-text">28.你如何对网站的文件和资源进行优化？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#29-如果网页内容需要支持多语言，你会怎么做？"><span class="nav-number">29.</span> <span class="nav-text">29.如果网页内容需要支持多语言，你会怎么做？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#30-如果设计中使用了非标准的字体，你该如何去实现？"><span class="nav-number">30.</span> <span class="nav-text">30.如果设计中使用了非标准的字体，你该如何去实现？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#31-如何自学一门新编程语言"><span class="nav-number">31.</span> <span class="nav-text">31.如何自学一门新编程语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#32-什么是哈希表？"><span class="nav-number">32.</span> <span class="nav-text">32.什么是哈希表？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#33-静态网页和动态网页区别："><span class="nav-number">33.</span> <span class="nav-text">33.静态网页和动态网页区别：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#34-SQL语句的分类"><span class="nav-number">34.</span> <span class="nav-text">34.SQL语句的分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#35-什么是弹性布局？"><span class="nav-number">35.</span> <span class="nav-text">35.什么是弹性布局？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#36-编写响应式？"><span class="nav-number">36.</span> <span class="nav-text">36.编写响应式？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#37-常见的浏览器兼容问题？"><span class="nav-number">37.</span> <span class="nav-text">37.常见的浏览器兼容问题？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#38-H5新特性："><span class="nav-number">38.</span> <span class="nav-text">38.H5新特性：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#39-C3新特性："><span class="nav-number">39.</span> <span class="nav-text">39.C3新特性：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#40-什么是typescript"><span class="nav-number">40.</span> <span class="nav-text">40.什么是typescript</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#41-三大框架的区别："><span class="nav-number">41.</span> <span class="nav-text">41.三大框架的区别：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#42-spa应用"><span class="nav-number">42.</span> <span class="nav-text">42.spa应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#43-什么是模块化编程？"><span class="nav-number">43.</span> <span class="nav-text">43.什么是模块化编程？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#44-性能优化？"><span class="nav-number">44.</span> <span class="nav-text">44.性能优化？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#45-什么是HTTP协议："><span class="nav-number">45.</span> <span class="nav-text">45.什么是HTTP协议：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">NissenMaster</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+<div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style="display:none">
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style="display:none">
+    有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
