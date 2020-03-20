@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hexo 指令]]></title>
+    <url>%2F2020%2F03%2F20%2Fhexo-%E6%8C%87%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[1. hexo server Hexo 会监视文件变动并自动更新，除修改站点配置文件外,无须重启服务器,直接刷新网页即可生效。 2. hexo server -s 以静态模式启动 3. hexo server -p 5000更改访问端口 (默认端口为4000，’ctrl + c’关闭server) 4. hexo server -i IP地址自定义 IP 5. hexo clean清除缓存 ,网页正常情况下可以忽略此条命令,执行该指令后,会删掉站点根目录下的public文件夹 6. hexo g生成静态网页 (执行 $ hexo g后会在站点根目录下生成public文件夹, hexo会将”/blog/source/“ 下面的.md后缀的文件编译为.html后缀的文件,存放在”/blog/public/ “ 路径下) 7. hexo d将本地数据部署到远端服务器(如github) 8. hexo init 文件夹名称初始化XX文件夹名称 9. npm update hexo -g升级 10. npm install hexo -g安装 11. node-v查看node.js版本号 12. npm -v查看npm版本号 13. git –version查看git版本号 14. hexo -v查看hexo版本号 15. hexo publish [layout] 通过 publish 命令将草稿移动到 source/_posts 文件夹,如:$ hexo publish [layout] ,草稿默认是不会显示在页面中的，可在执行时加上 –draft 参数，或是把 render_drafts 参数设为 true来预览草稿。]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[dva-loading]]></title>
     <url>%2F2019%2F10%2F22%2Fdva-loading%2F</url>
     <content type="text"><![CDATA[关于页面 loading 的问题，我们最初的方法是手动更新 loading：是在 redux 的 state 中增加 loading 变量，给其设定默认值，当执行调用接口的方法时，先改变一次 loading 的值，执行完成之后再改变一次。这个方法虽然可以解决页面 loading 的问题的，但是这种做法非常的啰嗦且不优雅。于是我们就引入了 dva-loading。dva-loading 其实只是异步执行方法的状态，并不是真正意义上的 loading，我们只是通过异步执行方法的状态给各组件自身控制 loading 渲染提供数据。 具体用法12345678910111213141516171819202122232425// 在 index.js 文件import dva from 'dva';import createLoading from 'dva-loading';const app = dva(&#123;...&#125;);app.use(createLoading());// 示例文件import React, &#123; PureComponent &#125; from 'react';import &#123; connect &#125; from 'dva';@connect((&#123; loading &#125;) =&gt; (&#123; loading: loading.effects['test/fetch'], // 监听单一异步请求状态&#125;))export default class Test extends PureComponent &#123; render() &#123; const &#123; loading &#125; = this.props; return ( &lt;Spin spinning=&#123;loading&#125;&gt; &lt;h1&gt;666666&lt;/h1&gt; &lt;/Spin&gt; ); &#125;&#125;]]></content>
