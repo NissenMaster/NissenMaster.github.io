@@ -4,6 +4,9 @@
     <title><![CDATA[hexo 指令]]></title>
     <url>%2F2020%2F03%2F20%2Fhexo-%E6%8C%87%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[1. hexo server Hexo 会监视文件变动并自动更新，除修改站点配置文件外,无须重启服务器,直接刷新网页即可生效。 2. hexo server -s 以静态模式启动 3. hexo server -p 5000更改访问端口 (默认端口为4000，’ctrl + c’关闭server) 4. hexo server -i IP地址自定义 IP 5. hexo clean清除缓存 ,网页正常情况下可以忽略此条命令,执行该指令后,会删掉站点根目录下的public文件夹 6. hexo g生成静态网页 (执行 $ hexo g后会在站点根目录下生成public文件夹, hexo会将”/blog/source/“ 下面的.md后缀的文件编译为.html后缀的文件,存放在”/blog/public/ “ 路径下) 7. hexo d将本地数据部署到远端服务器(如github) 8. hexo init 文件夹名称初始化XX文件夹名称 9. npm update hexo -g升级 10. npm install hexo -g安装 11. node-v查看node.js版本号 12. npm -v查看npm版本号 13. git –version查看git版本号 14. hexo -v查看hexo版本号 15. hexo publish [layout] 通过 publish 命令将草稿移动到 source/_posts 文件夹,如:$ hexo publish [layout] ,草稿默认是不会显示在页面中的，可在执行时加上 –draft 参数，或是把 render_drafts 参数设为 true来预览草稿。]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
       <tags>
         <tag>hexo</tag>
       </tags>
